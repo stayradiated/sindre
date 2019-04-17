@@ -4,7 +4,7 @@
   "description": "Print out the names of all your node_modules authors.",
   "main": "./src/index.js",
   "bin": {
-    "author": "./bin/sindre"
+    "sindre": "./bin/sindre"
   },
   "license": "MIT",
   "dependencies": {
