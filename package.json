@@ -1,0 +1,13 @@
+{
+  "name": "@stayradiated/sindre",
+  "version": "1.0.0",
+  "description": "Print out the names of all your node_modules authors.",
+  "main": "./src/index.js",
+  "bin": {
+    "author": "./bin/sindre"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "recursive-readdir-filter": "0.0.3"
+  }
+}
