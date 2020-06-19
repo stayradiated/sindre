@@ -50,6 +50,9 @@ const formatUsers = () => {
 
 readdir('./node_modules', options, async (err, files) => {
   await Promise.all(files.map(async (file) => {
+    if (file == null) {
+      return
+    }
     const jsonString = await fs.readFile(file, 'utf8')
     const json = JSON.parse(jsonString)
     dump(json.author)
