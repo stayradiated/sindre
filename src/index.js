@@ -49,14 +49,15 @@ const formatUsers = () => {
 }
 
 readdir('./node_modules', options, async (err, files) => {
-  await Promise.all(files.map(async (file) => {
-    if (file == null) {
-      return
+  for (const file of files) {
+    if (file != null) {
+      try {
+        const jsonString = await fs.readFile(file, 'utf8')
+        const json = JSON.parse(jsonString)
+        dump(json.author)
+        dump(json.contributors)
+      } catch {}
     }
-    const jsonString = await fs.readFile(file, 'utf8')
-    const json = JSON.parse(jsonString)
-    dump(json.author)
-    dump(json.contributors)
-  }))
+  }
   formatUsers()
 });
